@@ -1,0 +1,378 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const certTitles = document.querySelectorAll('.cert-title');
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('certModalImg');
+    const closeBtn = document.getElementById('certModalClose');
+
+    certTitles.forEach(function (title) {
+      title.addEventListener('click', function () {
+        const imgSrc = title.getAttribute('data-img');
+        modalImg.src = imgSrc;
+        modal.classList.add('active');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modalImg.src = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  });
+  
+</script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nifail Akbar — Junior Web Developer</title>
+<meta name="description" content="Portofolio pribadi Raka Pratama, Junior Web Developer. Lihat keahlian, pengalaman, dan karya proyek web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER / NAVBAR ============ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">NA</span>
+      <span class="brand-name">Nifail Akbar</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Buka menu navigasi">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#tentang">Tentang</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#sertifikat">Sertifikat</a>
+      <a href="#kegiatan">Kegiatan</a>
+      <a href="#blog">Artikel</a>
+      <a href="#kontak" class="nav-cta">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO / BERANDA ============ -->
+  <section class="hero" id="beranda">
+  <div class="wrap hero-inner">
+
+    <!-- BAGIAN TULISAN -->
+    <div class="hero-content">
+      <h1>
+        Nifail Akbar<br>
+        <span class="hero-role">Junior Web Developer</span>
+      </h1>
+
+      <p class="hero-tagline">
+        Merapikan ide jadi antarmuka yang jalan — dari HTML statis sampai
+        aplikasi berbasis basis data. Fokus pada kode yang rapi, terstruktur,
+        dan enak dibaca orang lain.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#kontak" class="btn btn-primary">Hubungi saya</a>
+        <a href="#portofolio" class="btn btn-ghost">Lihat karya</a>
+      </div>
+
+      <dl class="hero-facts">
+        <div>
+          <dt>Basis</dt>
+          <dd>Ponorogo,Jawa Timur,Indonesia</dd>
+        </div>
+
+        <div>
+          <dt>Fokus</dt>
+          <dd>Frontend &amp; Backend dasar</dd>
+        </div>
+
+        <div>
+          <dt>Status</dt>
+          <dd>Pelajar</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- FOTO DI SEBELAH KANAN -->
+    <div class="hero-image">
+      <img src="images/image.png" alt="Foto Nifail Akbar">
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ============ TENTANG SAYA ============ -->
+  <section class="section" id="tentang">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Tentang saya</h2>
+      </div>
+      <div class="section-body">
+        <p>Saya merupakan murid SMKN 1 JENANGAN yang masuk pada tahun pelajaran 2024/2025. Saya memutuskan untuk masuk di jurusan Rekayasa Perangkat Lunak (RPL) untuk memperdalam pengetahuan dan keterampilan di bidang teknologi informasi, khususnya dalam pengembangan perangkat lunak dan aplikasi.</p>
+        <p>Selama menempuh pendidikan di jurusan Rekayasa Perangkat Lunak, saya mempelajari berbagai hal yang berkaitan dengan pemrograman, pembuatan website, pengembangan aplikasi, pengelolaan basis data, serta penggunaan berbagai teknologi yang digunakan dalam dunia kerja. Melalui pembelajaran tersebut, saya berharap dapat meningkatkan kemampuan dan pengalaman yang nantinya dapat menjadi bekal untuk memasuki dunia kerja maupun melanjutkan pendidikan ke.</p>
+        <blockquote class="principle">"Kode yang baik itu kode yang bisa dibaca ulang enam bulan kemudian tanpa perlu mengingat-ingat."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROFIL PROFESIONAL ============ -->
+  <section class="section alt" id="profil">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Profil profesional</h2>
+      </div>
+      <div class="section-body">
+        <div class="profile-grid">
+           <div><span class="label">Status</span><p>Pelajar</p></div>
+           <div><span class="label">Instansi</span><p>SMKN 1 JENANGAN</p></div>
+          <div><span class="label">Bidang</span><p>Frontend & Backend dasar</p></div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PENDIDIKAN ============ -->
+  <section class="section" id="pendidikan">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Pendidikan</h2>
+      </div>
+      <div class="section-body">
+        <ol class="timeline">
+          <li>
+            <span class="timeline-year">2024 — sekarang</span>
+            <h3>SMKN 1 JENANGAN Jurusan(Rekayasa Perangkat Lunak)</h3>
+          </li>
+          <li>
+            <span class="timeline-year">2021 — 2024</span>
+            <h3>MTsN 2 PONOROGO</h3>
+          </li>
+          <li>
+            <span class="timeline-year">2015 — 2021</span>
+            <h3>SDN 2 SUKOREJO</h3>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PENGALAMAN ============ -->
+  <section class="section alt" id="pengalaman">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Pengalaman</h2>
+      </div>
+      <div class="section-body">
+        <ol class="timeline">
+          <li>
+            <span class="timeline-year">2026</span>
+            <h3>Proyek mandiri — Website toko batik</h3>
+            <p>Merancang dan membangun website toko dinamis lengkap dengan katalog, keranjang, checkout, dan panel admin menggunakan PHP dan MySQL.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2025</span>
+            <h3>Belajar terstruktur — Studi kasus backend & front-end</h3>
+            <p>Mengerjakan serangkaian studi kasus antarmuka statis untuk melatih tata letak, responsivitas, dan aksesibilitas.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEAHLIAN ============ -->
+  <div class="skill-group">
+  <h3>Skill Yang Di Pelajari</h3>
+  <ul class="skill-bars">
+    <li>
+      <div class="skill-bar-label">
+        <span>HTML5</span><span class="skill-bar-value">4.5/5</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" style="width:90%"></div>
+      </div>
+    </li>
+    <li>
+      <div class="skill-bar-label">
+        <span>CSS3 &amp; Responsive Design</span><span class="skill-bar-value">3.5/5</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" style="width:70%"></div>
+      </div>
+    </li>
+    <li>
+      <div class="skill-bar-label">
+        <span>JavaScript (dasar)</span><span class="skill-bar-value">4/5</span>
+      </div>
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" style="width:80%"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  <!-- ============ KARYA / PORTOFOLIO ============ -->
+  <section class="section alt" id="portofolio">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Karya &amp; portofolio</h2>
+      </div>
+      <div class="section-body">
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="140" fill="#EEEAE0"/>
+                <rect x="16" y="16" width="168" height="18" rx="2" fill="#2D5C4E"/>
+                <rect x="16" y="46" width="80" height="8" fill="#C7C2B2"/>
+                <rect x="16" y="60" width="120" height="8" fill="#C7C2B2"/>
+                <rect x="16" y="86" width="50" height="34" rx="2" fill="#B33A2E"/>
+                <rect x="74" y="86" width="50" height="34" rx="2" fill="#DAD5C5"/>
+                <rect x="132" y="86" width="52" height="34" rx="2" fill="#DAD5C5"/>
+              </svg>
+            </div>
+            <h3>Batik Nusantara — Website Toko</h3>
+            <p>Website dinamis toko batik: katalog, kategori, pencarian, keranjang, checkout, dan dashboard admin. Dibangun dengan PHP &amp; MySQL.</p>
+            <a class="work-link" href="../batik-store/index.php">Kunjungi website &rarr;</a>
+          </article>
+          <article class="work-card">
+            <div class="work-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="140" fill="#EEEAE0"/>
+                <circle cx="100" cy="50" r="26" fill="#2D5C4E"/>
+                <rect x="40" y="92" width="120" height="10" fill="#C7C2B2"/>
+                <rect x="60" y="110" width="80" height="8" fill="#DAD5C5"/>
+              </svg>
+            </div>
+            <h3>Website Profil Ini</h3>
+            <p>Website profil statis yang sedang Anda lihat — dibangun dengan HTML dan CSS murni, tanpa framework, dengan perhatian pada aksesibilitas dan responsivitas.</p>
+            <a class="work-link" href="#top">Lihat sumber &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERTIFIKAT / PRESTASI ============ -->
+  <section class="section" id="sertifikat">
+  <div class="wrap section-split">
+    <div class="section-head">
+      <h2>Sertifikat &amp; prestasi</h2>
+    </div>
+    <div class="section-body">
+      <ul class="cert-list">
+        <li>
+          <h3 class="cert-title" data-img="images/sertifikat.jpg">1.Sertifikat kunjungan Industri</h3>
+          <span class="mono-tag small">5 januari 2025</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Modal untuk menampilkan foto sertifikat -->
+<div class="cert-modal" id="certModal">
+  <div class="cert-modal-content">
+    <span class="cert-modal-close" id="certModalClose">&times;</span>
+    <img src="" alt="Foto Sertifikat" id="certModalImg">
+  </div>
+</div>
+
+ <!-- ============ KEGIATAN ============ -->
+<section class="section alt" id="kegiatan">
+  <div class="wrap section-split">
+    <div class="section-head">
+      <h2>Kegiatan</h2>
+    </div>
+    <div class="section-body">
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-photo">
+            <img src="Images/workshop.png" alt="Dokumentasi Workshop">
+          </div>
+          <span class="label">Workshop</span>
+          <p>Workshop pengembangan web profil pribadi.</p>
+        </div>
+
+    
+        <div class="activity-card">
+          <div class="activity-photo">
+            <img src="Images/ki.jpeg" alt="Dokumentasi Proyek Belajar">
+          </div>
+          <span class="label">Proyek belajar</span>
+          <p>kunjungan Industri di Gamelab Indonesia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ============ ARTIKEL / BLOG ============ -->
+  <section class="section" id="blog">
+  <div class="wrap section-split">
+    <div class="section-head">
+      <h2>Artikel</h2>
+    </div>
+    <div class="section-body">
+      <div class="blog-list">
+        <article class="blog-item">
+  <span class="mono-tag small">PENGALAMAN</span>
+  <h3><a href="artikel-1.html">Perjalanan Pengembangan Diri Selama PKL</a></h3>
+  <p>Praktik Kerja Lapangan (PKL) menjadi salah satu pengalaman yang berharga bagi saya sebagai siswa Rekayasa Perangkat Lunak. Melalui kegiatan ini, saya mendapatkan kesempatan untuk merasakan secara langsung bagaimana proses bekerja di lingkungan industri, khususnya dalam bidang pengembangan perangkat lunak.
+    Saya melaksanakan kegiatan PKL di **SEJE DIGITAL**..</p>
+      <a class="read-more" href="artikel-1.html">Baca selengkapnya →</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ============ KONTAK ============ -->
+  <section class="section alt" id="kontak">
+    <div class="wrap section-split">
+      <div class="section-head">
+        <h2>Kontak</h2>
+
+      </div>
+      <div class="section-body">
+        <ul class="contact-list">
+          <li><span class="label">Email</span><a href="mailto:nifailakbar01@email.com">nifailakbar01@email.com</a></li>
+          <li><span class="label">WhatsApp</span><a href="https://wa.me/qr/TY4F4ANFB4SHJ1">+62 812 3447 7608</a></li>
+          <li><span class="label">Alamat Instansi</span><a href="https://maps.app.goo.gl/LyniL2oYxzpWa25r7">SMKN 1 JENANGAN</a></li>
+          <li><span class="label">Instagram</span><a href="https://www.instagram.com/aiinnngg?stkn=YmJwOTF3NzhjN3Nj">@aiinnng</a></li>
+          <li><span class="label">TikTok</span><a href="https://www.tiktok.com/@nnffllllllll?_r=1&_t=ZS-99iftSaACXs">@ainnng</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year"></span> Nifail Akbar. Seluruh hak cipta dilindungi.</p>
+    <nav class="footer-nav">
+      <a href="#tentang">Tentang</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#kontak">Kontak</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
