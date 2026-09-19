@@ -260,22 +260,25 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .timeline p{ margin: 0; }
 
 /* Skills */
+.skill-group h3 {
+  padding-left: 500px;
+}
 .skill-bars {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-right: 500px;
+  margin-left: 500px;
+
 }
 .skill-bars li {
-  margin-bottom: 18px;
-}
-.skill-bars li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 14px;
 }
 .skill-bar-label {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  padding-top: 50px;
 }
 .skill-bar-value {
   opacity: 0.7;
@@ -286,11 +289,42 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   background: #e5e7eb;
   border-radius: 4px;
   overflow: hidden;
+  
 }
 .skill-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, #4f46e5, #818cf8);
   border-radius: 4px;
+  
+}
+
+.skill-group{
+  padding-bottom: 200px;
+  padding-top: 100px;
+
+}
+
+/* Di layar sempit, margin/padding 500px di atas lebih lebar dari layar itu
+   sendiri sehingga kontennya hancur/terdorong keluar. Override di sini
+   saja — tampilan di layar lebar (di atas 1100px) tetap sama persis
+   seperti sebelumnya, tidak ada yang berubah. */
+@media (max-width: 1100px){
+  .skill-group h3{
+    padding-left: 24px;
+  }
+  .skill-bars{
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media (max-width: 480px){
+  .skill-group{
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .skill-bar-label{
+    padding-top: 24px;
+  }
 }
 
 .blog-item p {
